@@ -56,7 +56,7 @@ Die Schlüsselwirbel-Verschlüsselung besteht aus zwei Schritten:
 
 Beim Entschlüsseln werden beide Schritte in umgekehrter Reihenfolge rückgängig gemacht.
 
-Eine ausführliche Erklärung befindet sich in der [Anleitung](Anleitung_Schluesselwirbel.md).
+Eine ausführliche Erklärung befindet sich in der [Anleitung](Anleitung_Schluesselwirbel.pdf).
 
 ## Dateien
 
@@ -65,8 +65,8 @@ Eine ausführliche Erklärung befindet sich in der [Anleitung](Anleitung_Schlues
 | [`Webseite/index.html`](Webseite/index.html) | Aufbau der Webanwendung |
 | [`Webseite/styles.css`](Webseite/styles.css) | Gestaltung und responsive Darstellung |
 | [`Webseite/script.js`](Webseite/script.js) | Ver- und Entschlüsselungslogik |
-| [`Anleitung_Schluesselwirbel.md`](Anleitung_Schluesselwirbel.md) | Einsteigerfreundliche Bedienungsanleitung |
-| [`Loesung_Verschluesselung.md`](Loesung_Verschluesselung.md) | Ausarbeitung der Aufgaben A1 bis A5 |
+| [`Anleitung_Schluesselwirbel.pdf`](Anleitung_Schluesselwirbel.pdf) | Einsteigerfreundliche Bedienungsanleitung |
+| [`Loesung_Verschluesselung.pdf`](Loesung_Verschluesselung.pdf) | Ausarbeitung der Aufgaben A1 bis A5 |
 
 ## Verwendeter Zeichenvorrat
 
