@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktive Visualisierung der Schlüsselwirbel-Verschlüsselung">
+  <title>Schlüsselwirbel – Verschlüsselung visualisiert</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Symmetrisches Verschlüsselungsverfahren</p>
+      <h1>Schlüssel<span>wirbel</span></h1>
+      <p class="intro">Beobachte, wie jedes Zeichen verschoben und anschließend innerhalb eines Blocks vertauscht wird.</p>
+    </div>
+    <div class="hero__mark" aria-hidden="true">81</div>
+  </header>
+
+  <main>
+    <section class="control-panel" aria-labelledby="eingabe-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">Eingabe</p>
+          <h2 id="eingabe-title">Text und Schlüssel</h2>
+        </div>
+        <div class="mode-switch" role="group" aria-label="Arbeitsmodus">
+          <button class="mode-button active" type="button" data-mode="encrypt">Verschlüsseln</button>
+          <button class="mode-button" type="button" data-mode="decrypt">Entschlüsseln</button>
+        </div>
+      </div>
+
+      <label for="text-input" id="text-label">Klartext</label>
+      <textarea id="text-input" rows="4" spellcheck="false">Der Serverraum wird am Freitag um 15 Uhr gewartet.</textarea>
+
+      <div class="input-row">
+        <div>
+          <label for="key-input">Schlüssel <span>mindestens 6 Zeichen</span></label>
+          <input id="key-input" value="WALNUSS" spellcheck="false" autocomplete="off">
+        </div>
+        <button id="run-button" class="primary-button" type="button">Jetzt verschlüsseln <span aria-hidden="true">→</span></button>
+      </div>
+
+      <p id="error-message" class="error" role="alert" hidden></p>
+    </section>
+
+    <section id="results" class="results" aria-live="polite">
+      <article class="result-card result-card--accent">
+        <div class="card-number" id="calculation-step-number">01</div>
+        <div class="card-content">
+          <p class="step-label">Schritt 1</p>
+          <h2 id="step-one-title">Zeichen verschieben</h2>
+          <p id="step-one-description" class="muted">Klartextzahl + Schlüsselzahl + Position, jeweils modulo 81.</p>
+          <div class="output-box">
+            <div class="output-heading">
+              <span id="intermediate-label">Zwischentext</span>
+              <button class="copy-button" type="button" data-copy="intermediate-output">Kopieren</button>
+            </div>
+            <code id="intermediate-output"></code>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead id="calculation-head"></thead>
+              <tbody id="calculation-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="result-card">
+        <div class="card-number" id="block-step-number">02</div>
+        <div class="card-content">
+          <p class="step-label">Schritt 2</p>
+          <h2 id="step-two-title">Blöcke verwirbeln</h2>
+          <p class="muted">Die Schlüssellänge bestimmt die Blockgröße. Die Sortierung des Schlüssels bestimmt die neue Reihenfolge.</p>
+
+          <div class="key-order">
+            <div>
+              <span>Schlüssel</span>
+              <strong id="key-display"></strong>
+            </div>
+            <div>
+              <span>Sortierte Positionen</span>
+              <strong id="order-display"></strong>
+            </div>
+          </div>
+          <div id="block-visualization" class="blocks"></div>
+        </div>
+      </article>
+
+      <article class="final-card">
+        <div>
+          <p class="step-label">Ergebnis</p>
+          <h2 id="final-title">Geheimtext</h2>
+        </div>
+        <div class="output-box output-box--final">
+          <code id="final-output"></code>
+          <button class="copy-button copy-button--light" type="button" data-copy="final-output">Kopieren</button>
+        </div>
+        <p id="summary" class="summary"></p>
+      </article>
+    </section>
+
+    <section class="alphabet-card" aria-labelledby="alphabet-title">
+      <div>
+        <p class="step-label">Nachschlagetabelle</p>
+        <h2 id="alphabet-title">Das Alphabet mit 81 Zeichen</h2>
+        <p class="muted">Klicke ein Zeichen an, um seine Zahl hervorzuheben.</p>
+      </div>
+      <div id="alphabet-grid" class="alphabet-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Schlüsselwirbel · Lernverfahren für das Aufgabenblatt</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
